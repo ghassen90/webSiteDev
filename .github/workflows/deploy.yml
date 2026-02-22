@@ -20,7 +20,7 @@ jobs:
           server: ${{ secrets.OVH_FTP_SERVER }}
           username: ${{ secrets.OVH_FTP_USERNAME }}
           password: ${{ secrets.OVH_FTP_PASSWORD }}
-          port: 990
+          port: 21
           protocol: ftp
           server-dir: /www/sasnio/
           dangerously-allow-unauthorized: true
