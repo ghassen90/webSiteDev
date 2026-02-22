@@ -1,0 +1,26 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Déploiement sur OVH Mutualisé
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Récupération du code (Checkout)
+        uses: actions/checkout@v4
+
+      - name: 📂 Déploiement FTP vers OVH
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.OVH_FTP_SERVER }}
+          username: ${{ secrets.OVH_FTP_USERNAME }}
+          password: ${{ secrets.OVH_FTP_PASSWORD }}
+          server-dir: /www/sasnio/
+          # Sur OVH mutualisé, l'accès FTP pointe généralement vers votre racine (/home/devinfe/).
+          # Le chemin vers votre sous-dossier doit donc être /www/sasnio/
+          # L'action synchronisera automatiquement les nouveaux fichiers lors du push sur la branche main.
