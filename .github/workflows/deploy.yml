@@ -14,12 +14,4 @@ jobs:
       - name: 🚚 Récupération du code (Checkout)
         uses: actions/checkout@v4
 
-      - name: 📂 Déploiement FTP vers OVH
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.OVH_FTP_SERVER }}
-          username: ${{ secrets.OVH_FTP_USERNAME }}
-          password: ${{ secrets.OVH_FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          server-dir: /www/sasnio/
+
