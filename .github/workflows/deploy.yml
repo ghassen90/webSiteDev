@@ -23,3 +23,4 @@ jobs:
           port: 21
           protocol: ftp
           server-dir: /www/sasnio/
+          dangerously-allow-unauthorized: true
