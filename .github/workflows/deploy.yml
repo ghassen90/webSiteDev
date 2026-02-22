@@ -20,6 +20,6 @@ jobs:
           server: ${{ secrets.OVH_FTP_SERVER }}
           username: ${{ secrets.OVH_FTP_USERNAME }}
           password: ${{ secrets.OVH_FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
           server-dir: /www/sasnio/
-          # Note : Si la connexion FTP d'OVH pointe déjà directement sur /home/devinfe/, 
-          # vous devrez peut-être changer la ligne ci-dessus en : server-dir: /www/sasnio/ ou www/sasnio/
